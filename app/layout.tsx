@@ -5,29 +5,20 @@ import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { Header } from "@/components/header";
 import { FooterSection } from "@/components/sections/footer-section";
+import { Toaster } from "@/components/ui/sonner";
 
 const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
 
 export const metadata: Metadata = {
-  title: 'VILDMARK | Go Further',
-  description: 'High-performance outdoor gear engineered for the modern explorer. Lightweight, durable, adventure-ready.',
-  generator: 'v0.app',
+  title: 'ROHIT TOURS & TRAVELS | Premium Car Rentals',
+  description: 'Book premium cars for your journey. ROHIT TOURS & TRAVELS offers luxury, SUV, and economy car rentals with the best rates.',
   icons: {
     icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
       {
         url: '/icon.svg',
         type: 'image/svg+xml',
       },
     ],
-    apple: '/apple-icon.png',
   },
 }
 
@@ -42,6 +33,7 @@ export default function RootLayout({
         <Header />
         {children}
         <FooterSection />
+        <Toaster />
         <Analytics />
       </body>
     </html>

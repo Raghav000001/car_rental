@@ -5,8 +5,8 @@ import { useEffect, useRef, useState, useCallback } from "react";
 
 export function PhilosophySection() {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const [alpineTranslateX, setAlpineTranslateX] = useState(-100);
-  const [forestTranslateX, setForestTranslateX] = useState(100);
+  const [alpineTranslateX, setAlpineTranslateX] = useState(0);
+  const [forestTranslateX, setForestTranslateX] = useState(0);
   const [titleOpacity, setTitleOpacity] = useState(1);
   const rafRef = useRef<number | null>(null);
 
@@ -22,11 +22,8 @@ export function PhilosophySection() {
     const scrolled = -rect.top;
     const progress = Math.max(0, Math.min(1, scrolled / scrollableRange));
     
-    // Alpine comes from left (-100% to 0%)
-    setAlpineTranslateX((1 - progress) * -100);
-    
-    // Forest comes from right (100% to 0%)
-    setForestTranslateX((1 - progress) * 100);
+    setAlpineTranslateX((1 - progress) * -20);
+    setForestTranslateX((1 - progress) * 20);
     
     // Title fades out as blocks come together
     setTitleOpacity(1 - progress);

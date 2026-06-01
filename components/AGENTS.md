@@ -10,6 +10,8 @@ components/
 ├── sections/          # 9 custom section components
 ├── header.tsx         # Nav with scroll effect + mobile menu
 ├── fleet-sidebar.tsx  # Faceted filter sidebar for fleet page
+├── fleet-grid.tsx     # Car grid with "Book" button → opens BookingModal
+├── booking-modal.tsx  # 3-step booking dialog (car → dates → details → email)
 ├── hero-section.tsx   # Homepage hero
 └── ...                # Other page components
 ```
@@ -21,10 +23,13 @@ components/
 | Page sections | `components/sections/` | 9 custom sections used by pages |
 | Navigation | `components/header.tsx` | Scroll effect + mobile hamburger menu |
 | Fleet filters | `components/fleet-sidebar.tsx` | Uses `useSearchParams` (client component) |
+| Car grid | `components/fleet-grid.tsx` | Client component rendering car cards with inline booking |
+| Booking modal | `components/booking-modal.tsx` | 3-step dialog: pick car → dates → details → email |
 
 ## CONVENTIONS
 - shadcn/ui **new-york** style (more compact, higher contrast)
 - `"use client"` on all interactive components (header, fleet-sidebar, ui primitives)
+- `"use client"` on all interactive components (header, fleet-sidebar, fleet-grid, booking-modal, ui primitives)
 - Import via `@/components/...` alias
 - `cn()` utility for class merging (clsx + tailwind-merge)
 - CSS variables in `app/globals.css` for theming

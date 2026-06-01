@@ -16,8 +16,8 @@ export function TestimonialsSection() {
       {/* About Image */}
       <div className="relative aspect-[16/9] w-full">
         <Image
-          src="https://images.unsplash.com/photo-1503371060967-ba4faab7cea5?q=80&w=2000"
-          alt="Premium luxury car at sunset"
+          src="/images/luxury-sedan.png"
+          alt="Premium luxury car"
           fill
           className="object-cover"
         />

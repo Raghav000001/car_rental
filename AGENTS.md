@@ -29,7 +29,7 @@ Next.js car rental booking theme with MongoDB backend. Brand: ROHIT TOURS & TRAV
 | Task | Location | Notes |
 |------|----------|-------|
 | Homepage | app/page.tsx | HeroSection + PhilosophySection + TestimonialsSection |
-| Fleet browsing | app/fleet/page.tsx | Server component, MongoDB query, faceted filters |
+| Fleet browsing / Book | app/fleet/page.tsx | FleetGrid (client) with BookingModal, 3-step flow + email |
 | Car detail | app/cars/[id]/page.tsx | Dynamic route |
 | Gallery | app/gallery/page.tsx | Image gallery page |
 | Features | app/features/page.tsx | Features page |
@@ -80,6 +80,12 @@ npm run start    # next start
 ## COMMON ERRORS & FIXES
 | Error | Cause | Fix |
 |-------|-------|-----|
-| `MongoServerSelectionError: tlsv1 alert internal error` | TLS handshake failure with MongoDB Atlas; missing query params or cert validation issue | Add `tls: true`, `tlsInsecure: true` (dev), `serverSelectionTimeoutMS: 15000` to mongoose options; append `?retryWrites=true&w=majority` to URI |
-| `Performance.measure() negative timestamp` | Next.js Turbopack dev bug — triggers when server component throws | Fix the underlying component error (typically MongoDB connection failure cascade) |
-| `global.mongoose` typed as `any` | Original cache used `any` type | Fixed to typed `__mongooseCache` with `typeof mongoose` |
+| `MongoServerSelectionError: connection <monitor> to ...:27017 timed out` | MongoDB Atlas unreachable; cluster may be paused or network blocked | Increase `serverSelectionTimeoutMS` to 30000+; verify cluster is running in Atlas dashboard; check IP whitelist |
+| `queryTxt ETIMEOUT` + SSL errors | DNS/TLS handshake failures | Add `?retryWrites=true&w=majority` to URI; set `tls: true, tlsInsecure: true` (dev) |
+| Email sending fails | SMTP not configured | Set `SMTP_HOST`, `SMTP_USER`, `SMTP_PASS`, `CONTACT_EMAIL` in .env |
+
+## BOOKING FLOW
+- **Page**: `/fleet` — click "Book" on any car card → opens `BookingModal` dialog
+- **Steps**: (1) Confirm car → (2) Pick pickup/return dates → (3) Fill name/email/phone → Submit
+- **Email**: POST to `/api/booking` → Nodemailer sends HTML confirmation to customer + admin notification
+- **Config**: Requires SMTP env vars for email to work; MongoDB must be reachable for fleet data

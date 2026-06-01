@@ -1,17 +1,24 @@
 "use client";
 
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useCallback, useState } from "react";
+import { useCallback, useState, useMemo } from "react";
+import { SlidersHorizontal, X, ChevronDown, ChevronUp } from "lucide-react";
 
 export function FleetSidebar() {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   // Parse existing query params
   const currentMakes = searchParams.get("make")?.split(",") || [];
   const currentTypes = searchParams.get("type")?.split(",") || [];
   const currentTransmission = searchParams.get("transmission") || "";
+
+  const activeCount = useMemo(
+    () => currentMakes.length + currentTypes.length + (currentTransmission ? 1 : 0),
+    [currentMakes, currentTypes, currentTransmission],
+  );
 
   const createQueryString = useCallback(
     (name: string, value: string) => {
@@ -37,8 +44,8 @@ export function FleetSidebar() {
     router.push(pathname + "?" + createQueryString(key, newSelections.join(",")));
   };
 
-  return (
-    <aside className="w-full md:w-64 shrink-0 flex flex-col gap-8 bg-card p-6 border border-border/60 rounded-[1.25rem] sticky top-24 h-fit">
+  const filterContent = (
+    <>
       <div>
         <h3 className="font-semibold text-foreground mb-4">Brands</h3>
         <div className="flex flex-col gap-3">
@@ -111,6 +118,58 @@ export function FleetSidebar() {
       >
         Clear All Filters
       </button>
-    </aside>
+    </>
+  );
+
+  return (
+    <>
+      <div className="flex md:hidden w-full">
+        <button
+          type="button"
+          onClick={() => setMobileOpen(!mobileOpen)}
+          className="flex items-center justify-between w-full bg-card border border-border/60 rounded-[1.25rem] px-5 py-3 text-sm font-medium text-foreground"
+        >
+          <span className="flex items-center gap-2">
+            <SlidersHorizontal size={16} />
+            Filters
+            {activeCount > 0 && (
+              <span className="bg-foreground text-background text-[10px] font-bold px-1.5 py-0.5 rounded-full leading-none">
+                {activeCount}
+              </span>
+            )}
+          </span>
+          {mobileOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+        </button>
+      </div>
+
+      {mobileOpen && (
+        <div className="flex flex-col gap-8 bg-card p-5 border border-border/60 rounded-[1.25rem] md:hidden">
+          <div className="flex items-center justify-between">
+            <span className="text-sm font-semibold text-foreground">Filters</span>
+            <button
+              type="button"
+              onClick={() => setMobileOpen(false)}
+              className="text-muted-foreground hover:text-foreground"
+              aria-label="Close filters"
+            >
+              <X size={18} />
+            </button>
+          </div>
+          {filterContent}
+        </div>
+      )}
+
+      <aside className="hidden md:flex md:w-64 shrink-0 flex-col gap-8 bg-card p-6 border border-border/60 rounded-[1.25rem] sticky top-24 h-fit">
+        <div className="flex items-center justify-between">
+          <span className="text-sm font-semibold text-foreground">Filters</span>
+          {activeCount > 0 && (
+            <span className="bg-foreground text-background text-[10px] font-bold px-1.5 py-0.5 rounded-full leading-none">
+              {activeCount}
+            </span>
+          )}
+        </div>
+        {filterContent}
+      </aside>
+    </>
   );
 }

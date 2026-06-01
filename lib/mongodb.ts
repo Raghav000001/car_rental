@@ -41,8 +41,9 @@ async function connectToDatabase(): Promise<typeof mongoose> {
       tls: true,
       // Allow self-signed certs in dev (Atlas free-tier can have cert validation quirks)
       tlsInsecure: process.env.NODE_ENV !== 'production',
-      serverSelectionTimeoutMS: 15000,
-      connectTimeoutMS: 15000,
+      serverSelectionTimeoutMS: 30000,
+      connectTimeoutMS: 30000,
+      socketTimeoutMS: 45000,
     };
 
     cached.promise = mongoose.connect(uri, opts);

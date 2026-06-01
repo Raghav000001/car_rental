@@ -25,6 +25,8 @@ app/
 | Homepage | `app/page.tsx` | Section-based composition |
 | Fleet (all cars) | `app/fleet/page.tsx` | `searchParams` for faceted filtering |
 | Single car | `app/cars/[id]/page.tsx` | Dynamic route with `params.id` |
+| Book a car | `components/booking-modal.tsx` | Opened from fleet grid, 3-step flow + email |
+| Booking API | `app/api/booking/route.ts` | POST handler — sends emails via Nodemailer |
 | Seed DB | `app/api/seed/route.ts` | GET handler — visit after setting MONGODB_URI |
 
 ## CONVENTIONS

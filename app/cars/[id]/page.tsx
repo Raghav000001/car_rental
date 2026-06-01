@@ -98,9 +98,12 @@ export default async function CarDetailsPage({
             </ul>
           </div>
 
-          <button className="w-full md:w-auto bg-foreground text-background py-4 px-8 rounded-full font-medium hover:opacity-90 transition-opacity">
-            Proceed to Booking
-          </button>
+          <Link
+            href={`/fleet?carId=${car._id}`}
+            className="inline-flex items-center justify-center gap-2 w-full md:w-auto bg-foreground text-background py-4 px-8 rounded-full font-medium hover:opacity-90 transition-opacity"
+          >
+            Browse All Cars
+          </Link>
         </div>
       </div>
     </main>

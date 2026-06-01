@@ -77,10 +77,6 @@ export function FeaturedProductsSection() {
         ))}
       </div>
 
-      {/* CTA Link */}
-      <div className="flex justify-center px-6 pb-28 md:px-12 lg:px-20">
-        
-      </div>
     </section>
   );
 }
