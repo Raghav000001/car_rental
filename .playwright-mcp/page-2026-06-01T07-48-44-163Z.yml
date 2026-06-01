@@ -1,0 +1,181 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "ROHIT TOURS & TRAVELS" [ref=e4] [cursor=pointer]:
+        - /url: /
+      - navigation [ref=e5]:
+        - link "Our Fleet" [ref=e6] [cursor=pointer]:
+          - /url: /fleet
+        - link "Features" [ref=e7] [cursor=pointer]:
+          - /url: /features
+        - link "Gallery" [ref=e8] [cursor=pointer]:
+          - /url: /gallery
+        - link "Pricing" [ref=e9] [cursor=pointer]:
+          - /url: /pricing
+      - link "Book Now" [ref=e11] [cursor=pointer]:
+        - /url: /fleet
+  - main [ref=e12]:
+    - generic [ref=e13]:
+      - generic [ref=e16]:
+        - generic:
+          - generic:
+            - img "Luxury sports car"
+          - generic:
+            - img "Modern premium car"
+        - generic [ref=e17]:
+          - img "High-performance Audi luxury car" [ref=e18]
+          - generic [ref=e20]:
+            - heading "R O H I T" [level=1] [ref=e21]:
+              - generic [ref=e22]: R
+              - generic [ref=e23]: O
+              - generic [ref=e24]: H
+              - generic [ref=e25]: I
+              - generic [ref=e26]: T
+            - heading "T O U R S & T R A V E L S" [level=2] [ref=e27]:
+              - generic [ref=e28]: T
+              - generic [ref=e29]: O
+              - generic [ref=e30]: U
+              - generic [ref=e31]: R
+              - generic [ref=e32]: S
+              - generic [ref=e34]: "&"
+              - generic [ref=e36]: T
+              - generic [ref=e37]: R
+              - generic [ref=e38]: A
+              - generic [ref=e39]: V
+              - generic [ref=e40]: E
+              - generic [ref=e41]: L
+              - generic [ref=e42]: S
+        - generic:
+          - generic:
+            - img "Performance vehicle"
+          - generic:
+            - img "Luxurious ride"
+      - paragraph [ref=e45]:
+        - text: Premium cars, unbeatable rates
+        - text: and ultimate freedom.
+    - generic [ref=e46]:
+      - generic [ref=e49]:
+        - generic:
+          - heading "Sedan & SUV." [level=2]
+        - generic [ref=e50]:
+          - generic [ref=e51]:
+            - img "Luxury sedan with premium features" [ref=e52]
+            - generic [ref=e53]: Luxury Sedan $89/day
+          - generic [ref=e54]:
+            - img "Adventure SUV perfect for exploring" [ref=e55]
+            - generic [ref=e56]: Premium SUV $129/day
+      - generic [ref=e58]:
+        - paragraph [ref=e59]: Featured vehicles
+        - paragraph [ref=e60]: Our premium sedan and SUV options deliver style, comfort, and reliability for every journey. Perfect for business trips, weekend getaways, or family adventures.
+    - generic [ref=e61]:
+      - generic [ref=e62]:
+        - heading "Built for Comfort. Designed for Safety." [level=2] [ref=e63]:
+          - text: Built for Comfort.
+          - text: Designed for Safety.
+        - paragraph [ref=e64]: Premium Features
+      - generic [ref=e65]:
+        - generic [ref=e66]:
+          - img "Advanced GPS Navigation" [ref=e69]
+          - generic [ref=e70]:
+            - paragraph [ref=e71]: Technology
+            - heading "Advanced GPS Navigation" [level=3] [ref=e72]
+        - generic [ref=e73]:
+          - img "Premium Comfort Seating" [ref=e76]
+          - generic [ref=e77]:
+            - paragraph [ref=e78]: Comfort
+            - heading "Premium Comfort Seating" [level=3] [ref=e79]
+        - generic [ref=e80]:
+          - img "Backup Camera System" [ref=e83]
+          - generic [ref=e84]:
+            - paragraph [ref=e85]: Safety
+            - heading "Backup Camera System" [level=3] [ref=e86]
+        - generic [ref=e87]:
+          - img "Automatic Climate Control" [ref=e90]
+          - generic [ref=e91]:
+            - paragraph [ref=e92]: Features
+            - heading "Automatic Climate Control" [level=3] [ref=e93]
+        - generic [ref=e94]:
+          - img "Bluetooth Connectivity" [ref=e97]
+          - generic [ref=e98]:
+            - paragraph [ref=e99]: Technology
+            - heading "Bluetooth Connectivity" [level=3] [ref=e100]
+        - generic [ref=e101]:
+          - img "Full Insurance Coverage" [ref=e104]
+          - generic [ref=e105]:
+            - paragraph [ref=e106]: Protection
+            - heading "Full Insurance Coverage" [level=3] [ref=e107]
+    - generic [ref=e112]:
+      - heading "Ready to Hit the Road?" [level=2] [ref=e113]
+      - paragraph [ref=e114]: Book your perfect vehicle today and experience the freedom of the open road.
+      - generic [ref=e115]:
+        - link "Book Now" [ref=e116] [cursor=pointer]:
+          - /url: /fleet
+        - link "Contact Us" [ref=e117] [cursor=pointer]:
+          - /url: /fleet
+    - generic [ref=e122]:
+      - paragraph [ref=e123]: Velocity vehicles combine premium engineering with unbeatable rates — designed for travelers who refuse to compromise on comfort or value on any journey.
+      - link "Book Now" [ref=e125] [cursor=pointer]:
+        - /url: /fleet
+  - contentinfo [ref=e126]:
+    - generic [ref=e128]:
+      - generic [ref=e129]:
+        - link "ROHIT TOURS & TRAVELS" [ref=e130] [cursor=pointer]:
+          - /url: /
+        - paragraph [ref=e131]: Rohit Tours and Travels - Premium car rentals for every journey. Wide selection of vehicles, competitive pricing, and 24/7 support.
+      - generic [ref=e132]:
+        - heading "Explore" [level=4] [ref=e133]
+        - list [ref=e134]:
+          - listitem [ref=e135]:
+            - link "Our Fleet" [ref=e136] [cursor=pointer]:
+              - /url: /fleet
+          - listitem [ref=e137]:
+            - link "Features" [ref=e138] [cursor=pointer]:
+              - /url: /features
+          - listitem [ref=e139]:
+            - link "Gallery" [ref=e140] [cursor=pointer]:
+              - /url: /gallery
+          - listitem [ref=e141]:
+            - link "Pricing" [ref=e142] [cursor=pointer]:
+              - /url: /pricing
+      - generic [ref=e143]:
+        - heading "About" [level=4] [ref=e144]
+        - list [ref=e145]:
+          - listitem [ref=e146]:
+            - link "About Us" [ref=e147] [cursor=pointer]:
+              - /url: /#about
+          - listitem [ref=e148]:
+            - link "Team" [ref=e149] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e150]:
+            - link "Careers" [ref=e151] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e152]:
+            - link "Contact" [ref=e153] [cursor=pointer]:
+              - /url: /pricing
+      - generic [ref=e154]:
+        - heading "Service" [level=4] [ref=e155]
+        - list [ref=e156]:
+          - listitem [ref=e157]:
+            - link "FAQ" [ref=e158] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e159]:
+            - link "Booking" [ref=e160] [cursor=pointer]:
+              - /url: /fleet
+          - listitem [ref=e161]:
+            - link "Cancellation" [ref=e162] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e163]:
+            - link "Support" [ref=e164] [cursor=pointer]:
+              - /url: /pricing
+    - generic [ref=e166]:
+      - paragraph [ref=e167]: 2026 Rohit Tours and Travels. All rights reserved.
+      - generic [ref=e168]:
+        - link "Instagram" [ref=e169] [cursor=pointer]:
+          - /url: "#"
+        - link "Twitter" [ref=e170] [cursor=pointer]:
+          - /url: "#"
+        - link "YouTube" [ref=e171] [cursor=pointer]:
+          - /url: "#"
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e177] [cursor=pointer]:
+    - img [ref=e178]

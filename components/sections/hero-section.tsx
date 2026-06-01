@@ -36,8 +36,11 @@ const sideImages = [
 export function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+
     const handleScroll = () => {
       if (!sectionRef.current) return;
       
@@ -49,11 +52,15 @@ export function HeroSection() {
       setScrollProgress(progress);
     };
 
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+
     window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleResize, { passive: true });
     handleScroll();
     
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -136,11 +143,11 @@ export function HeroSection() {
               
               {/* Overlay Text - Fades out first */}
               <div 
-                className="absolute inset-0 flex flex-col items-center justify-end pb-4 overflow-hidden z-10"
+                className="absolute inset-0 flex flex-col items-center justify-end pb-6 sm:pb-8 overflow-hidden z-10"
                 style={{ opacity: textOpacity }}
               >
-                <div className="w-full flex flex-col items-center justify-center text-center font-medium leading-[0.8] tracking-tighter text-white">
-                  <h1 className="flex text-[22vw]">
+                <div className="w-full flex flex-col items-center justify-center text-center font-medium leading-[0.8] tracking-tighter text-white px-4">
+                  <h1 className="flex text-[18vw] sm:text-[22vw]">
                     {titleLine1.split("").map((letter, index) => (
                       <span
                         key={`l1-${index}`}
@@ -155,7 +162,7 @@ export function HeroSection() {
                       </span>
                     ))}
                   </h1>
-                  <h2 className="flex flex-wrap justify-center text-[10vw] md:text-[8vw] mt-2 mb-4">
+                  <h2 className="flex flex-wrap justify-center text-[7vw] sm:text-[10vw] md:text-[8vw] mt-2 mb-4">
                     {titleLine2.split("").map((letter, index) => (
                       <span
                         key={`l2-${index}`}
@@ -217,6 +224,14 @@ export function HeroSection() {
           <br />
           and ultimate freedom.
         </p>
+        <div className="mt-8 flex justify-center md:hidden">
+          <a
+            href="/fleet"
+            className="inline-flex items-center justify-center rounded-full bg-foreground px-8 py-3 text-sm font-semibold text-background transition-all hover:opacity-90"
+          >
+            Browse Our Fleet
+          </a>
+        </div>
       </div>
     </section>
   );
