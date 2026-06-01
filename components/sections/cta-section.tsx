@@ -25,7 +25,7 @@ export function CtaSection() {
             Book your perfect vehicle today and experience the freedom of the open road.
           </p>
 
-          <div className="mt-6 flex  w-full max-w-xs flex-col gap-3 sm:mt-8 sm:max-w-none sm:flex-row sm:gap-4">
+          <div className="mt-6 flex flex-center justify-center w-full max-w-xs flex-col gap-3 sm:mt-8 sm:max-w-none sm:flex-row sm:gap-4">
             <Link
               href="/fleet"
               className="inline-flex w-full items-center justify-center rounded-lg bg-white px-8 py-3 text-sm font-semibold text-foreground transition-all hover:bg-white/90 sm:w-auto"
