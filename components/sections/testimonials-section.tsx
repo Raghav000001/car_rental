@@ -16,7 +16,7 @@ export function TestimonialsSection() {
       {/* About Image */}
       <div className="relative aspect-[16/9] w-full">
         <Image
-          src="/images/luxury-sedan.png"
+          src="/images/indian-car.jpg"
           alt="Premium luxury car"
           fill
           className="object-cover"
